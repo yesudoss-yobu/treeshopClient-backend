@@ -2,11 +2,6 @@ const express = require("express");
 const router = express.Router();
 const InfoRouter = require("./Schema");
 
-//test
-router.use((req, res, next) => {
-  // res.send("request worked");
-  // next();
-});
 //getall
 router.get("/", async (req, res) => {
   console.log("all data getted");
