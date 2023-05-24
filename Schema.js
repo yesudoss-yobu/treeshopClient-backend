@@ -30,10 +30,6 @@ const infoShema = mongoose.Schema({
     type: Number,
     required: true,
     trim: true,
-    // validate: {
-    //   validator: (v) => v % 2 === 0,
-    //   message: (props) => `${props.value} is not a even number`,
-    // },
   },
   reviews: {
     type: Number,
