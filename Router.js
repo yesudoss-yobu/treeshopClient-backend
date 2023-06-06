@@ -2,12 +2,14 @@ const express = require("express");
 const router = express.Router();
 const InfoRouter = require("./Schema");
 const jwt = require("jsonwebtoken");
+const DummyRouter = require("./dbs");
 const { default: mongoose } = require("mongoose");
 
 //getall
 router.get("/", async (req, res) => {
   console.log("all data got");
-  var findData = await InfoRouter.find();
+  // var findData = await InfoRouter.find();
+  var findData = await DummyRouter.model2.find();
 
   res.json(findData);
 });
@@ -48,7 +50,8 @@ router.get("/posts", async (req, res) => {
 
 //create
 router.post("/", async (req, res) => {
-  var data = new InfoRouter(req.body);
+  // var data = new InfoRouter(req.body);
+  var data = new DummyRouter.model2(req.body);
   await data.save();
   res.json(data);
 });
